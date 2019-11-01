@@ -1,12 +1,14 @@
 // code away!
 
 const express = require("express"),
-  server = require("./server"),
-  app = express();
+  logger = require("./logger"),
+  server = express();
 
-app.use(server);
-app.use(express.json());
-
-app.listen(9000, () => {
+server.use(express.json());
+server.use(logger);
+server.get("/", (req, res) => {
+  res.send(`<h2>Let's write some middleware!</h2>`);
+});
+server.listen(9000, () => {
   console.log("Server running on localhost:9000");
 });
