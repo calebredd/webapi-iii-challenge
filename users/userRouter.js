@@ -164,7 +164,7 @@ function validatePost(req, res, next) {
 }
 function validateUser(req, res, next) {
   const newUser = req.body;
-  if (!newUser.text) {
+  if (!newUser.name) {
     res.status(404).send("Unable to add user without a Name");
   } else {
     next();

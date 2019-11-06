@@ -1,5 +1,5 @@
 const express = require("express");
-
+const router = express.Router({ mergeParams: true });
 const Posts = require("./postDb");
 router.get("/", (req, res) => {
   Posts.get()
@@ -35,7 +35,7 @@ router.put("/:postId", validatePostId, (req, res) => {
   const user_id = req.params.id;
   req.body.user_id = user_id;
   const editPost = req.body;
-  Posts.update(req.params.id, editPost)
+  Posts.update(req.params.postId, editPost)
     .then(post => {
       if (post) {
         res.status(201).json(post);
@@ -53,6 +53,7 @@ router.put("/:postId", validatePostId, (req, res) => {
 function validatePostId(req, res, next) {
   Posts.getById(req.params.postId)
     .then(post => {
+      // console.log(req.params.id, post.user_id);
       if (post.user_id == req.params.id) {
         next();
       } else {
