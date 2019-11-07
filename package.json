@@ -4,11 +4,12 @@
   "description": "Web API Blog Project",
   "main": "server.js",
   "scripts": {
-    "client-install":"npm install --prefix client",
-    "start":"node server.js",
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
     "server": "nodemon server.js",
-    "client":"cd client && npm start",
-    "dev":"concurrently \"npm run server\" \"npm run client\" "
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
