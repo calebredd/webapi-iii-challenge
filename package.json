@@ -2,9 +2,13 @@
   "name": "webapi-blog",
   "version": "1.0.0",
   "description": "Web API Blog Project",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "client-install":"npm install --prefix client",
+    "start":"node server.js",
+    "server": "nodemon server.js",
+    "client":"cd client && npm start",
+    "dev":"concurrently \"npm run server\" \"npm run client\" "
   },
   "repository": {
     "type": "git",
@@ -23,6 +27,7 @@
   },
   "homepage": "https://github.com/LambdaSchool/Node-Blog#readme",
   "dependencies": {
+    "concurrently": "^5.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.18.3",

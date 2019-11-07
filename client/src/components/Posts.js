@@ -8,7 +8,7 @@ export default function Posts(props) {
   useEffect(() => {
     async function fetchData() {
       await axios
-        .get(`http://localhost:9000/api/users/${userId}/posts`)
+        .get(`/api/users/${userId}/posts`)
         .then(res => {
           // console.log(res.data.userPosts);
           setPosts(res.data.userPosts);

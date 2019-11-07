@@ -8,7 +8,7 @@ function App() {
     // async function fetchData() {
     // await axios
     axios
-      .get("http://localhost:9000/api/users")
+      .get("/api/users")
       .then(res => {
         // console.log(res.data.users);
         setUsers(res.data.users);
@@ -24,7 +24,7 @@ function App() {
     // console.log(e.target.name.value);
     const name = e.target.name.value;
     axios
-      .post("http://localhost:9000/api/users/", { name: name })
+      .post("/api/users/", { name: name })
       .then(res => {
         // console.log(res.data);
         setUsers(res.data);
