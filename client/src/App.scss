@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+
+
+
+  .App-header {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding: 20px;
+  }
+
+  .users {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 20px auto;
+
+    .userCard {
+      margin: 20px auto;
+      width: 45%;
+      border: 2px solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: #282c34;
+      color: white;
+
+      .userName {
+        height: 5%;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .userQuotes {
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .quote {
+          font-size: 1.25rem;
+          font-style: italic;
+          margin: 10px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+}
